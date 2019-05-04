@@ -15,6 +15,7 @@ class CreateSoccerTeamsTable extends Migration
     {
         Schema::create('soccer_teams', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->timestamps();
         });
     }
