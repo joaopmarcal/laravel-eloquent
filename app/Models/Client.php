@@ -27,5 +27,9 @@ class Client extends Model
       'physical_disability',
       'company_name',
       'client_type',
+      'soccer_teams_id'
     ];
+    public function soccerTeam(){
+        return $this->belongsTo(SoccerTeam::class);
+    }
 }

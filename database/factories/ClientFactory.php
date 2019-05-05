@@ -2,6 +2,8 @@
 
 use Faker\Generator as Faker;
 
+require_once __DIR__ .'/../faker_data/document_number.php';
+
 $factory->define(App\Models\Client::class, function (Faker $faker){
     return [
         'name' => $faker->name,
