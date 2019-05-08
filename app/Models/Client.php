@@ -27,9 +27,12 @@ class Client extends Model
       'physical_disability',
       'company_name',
       'client_type',
-      'soccer_teams_id'
+      'soccer_team_id'
     ];
-    public function soccerTeam(){
+    public function soccerTeam(){//many-to-one
         return $this->belongsTo(SoccerTeam::class);
+    }
+    public function clientProfile(){
+        return $this->hasOne(ClientProfile::class);
     }
 }
