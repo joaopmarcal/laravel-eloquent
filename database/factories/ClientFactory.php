@@ -11,7 +11,7 @@ $factory->define(App\Models\Client::class, function (Faker $faker){
         'email' => $faker->email,
         'phone' => $faker->phoneNumber,
         'defaulter' => rand(0, 1),
-        //'soccer_team_id' => rand(1,SoccerTeamsTableSeeder::MAX_ROWS)
+        'soccer_team_id' => rand(1,SoccerTeamsTableSeeder::MAX_ROWS)
     ];
 });
 $factory->state(\App\Models\Client::class,\App\Models\Client::TYPE_INDIVIDUAL, function (Faker $faker) {
