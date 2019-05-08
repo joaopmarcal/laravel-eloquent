@@ -11,15 +11,21 @@ class ClientProfilesTableSeeder extends Seeder
      */
     public function run()
     {
+
+
         /** @var \Illuminate\Database\Eloquent\Collection $clients */
         $clients = \App\Models\Client::all();
-        $countClients = $clients->count();
+        $clients->each(function ($client){
+            $clientProfile = factory(\App\Models\ClientProfile::class)->make();
+            $client->clientProfile()->create($clientProfile->toArray());
+        });
 
         /** @var \Illuminate\Database\Eloquent\Collection $collectionIndividual */
+        /*
         $collectionIndividual = factory(\App\Models\ClientProfile::class,$countClients)->make();
         $collectionIndividual->each(function ($clientProfile) use ($clients){
             $clientProfile->client_id = $clients->random()->id;
             $clientProfile->save();
-        });
+        });*/
     }
 }
